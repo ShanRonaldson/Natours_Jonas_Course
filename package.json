@@ -1,0 +1,18 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "advanced css",
+  "main": "index.html",
+  "scripts": {
+    "compile:scss": "node-sass ./sass/main.scss ./css/style.css -w",
+    "start": "node-sass ./sass/main.scss ./css/style.css -w"
+  },
+  "author": "Shannon",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "4.14.1"
+  },
+  "dependencies": {
+    "sass": "^1.27.0"
+  }
+}
