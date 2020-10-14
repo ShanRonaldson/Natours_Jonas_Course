@@ -16,4 +16,12 @@
   &:hover{
       transform: translateY(-1.5rem) scale(1.03);
   }
+
+  &:first-child{
+  margin-left: 5%;
+  }
+
+  &:last-child{
+    margin-right: 5%;
+  }
 }

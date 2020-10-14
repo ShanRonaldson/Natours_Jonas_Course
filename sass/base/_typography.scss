@@ -5,6 +5,8 @@ body {
   color: $color-grey-dark;
   padding: 3rem;
   box-sizing: border-box;
+
+  
 }
 
 .heading-primary {
@@ -55,11 +57,12 @@ body {
   font-size: $general-font-size;
   font-weight: 700;
   text-transform: uppercase;
+  margin-left: 1.5%;
 }
 
 .paragraph {
   font-size: $general-font-size;
-
+  margin-left: 1.5%;
   &:not(:last-child) {
     margin-bottom: 3rem;
   }

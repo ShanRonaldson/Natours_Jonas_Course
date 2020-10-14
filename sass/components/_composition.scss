@@ -33,4 +33,13 @@
 transform: scale(.95);
   }
   //composition:hover composition__photo:not(:hover)
+
+  
+  &:first-child{
+    margin-left: 2%;
+    }
+  
+    &:last-child{
+      margin-right: 2%;
+    }
 }

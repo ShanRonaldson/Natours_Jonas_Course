@@ -9,6 +9,7 @@
     transition: all 0.2s;
     position: relative;
     font-size: $general-font-size;
+    
   }
 
   &:hover {
@@ -66,6 +67,7 @@
 }
 
 .btn-text {
+  margin-left: 1.5%;
   &:link,
   &:visited {
     font-size: $general-font-size;

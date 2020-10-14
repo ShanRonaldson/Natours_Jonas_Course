@@ -174,10 +174,12 @@ body {
   font-size: 1.6rem;
   font-weight: 700;
   text-transform: uppercase;
+  margin-left: 1.5%;
 }
 
 .paragraph {
   font-size: 1.6rem;
+  margin-left: 1.5%;
 }
 
 .paragraph:not(:last-child) {
@@ -284,6 +286,10 @@ body {
           animation-fill-mode: backwards;
 }
 
+.btn-text {
+  margin-left: 1.5%;
+}
+
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
   color: #55c57a;
@@ -355,6 +361,14 @@ body {
           transform: scale(0.95);
 }
 
+.composition:first-child {
+  margin-left: 2%;
+}
+
+.composition:last-child {
+  margin-right: 2%;
+}
+
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
@@ -383,6 +397,14 @@ body {
 .feature-box:hover {
   -webkit-transform: translateY(-1.5rem) scale(1.03);
           transform: translateY(-1.5rem) scale(1.03);
+}
+
+.feature-box:first-child {
+  margin-left: 5%;
+}
+
+.feature-box:last-child {
+  margin-right: 5%;
 }
 
 .card {
@@ -573,22 +595,59 @@ body {
 .story__shape {
   width: 15rem;
   height: 15rem;
-  background-color: orange;
   float: left;
   shape-outside: circle(50% at 50% 50%);
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
   -webkit-transform: translateX(-3rem) skewX(12deg);
-          transform: translateX(-3rem) skewX(12deg);
+  transform: translateX(-3rem) skewX(12deg);
+  position: relative;
+  overflow: hidden;
 }
 
 .story__image {
   height: 100%;
+  -webkit-transform: translateX(-4rem) scale(1.4);
+          transform: translateX(-4rem) scale(1.4);
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
 .story__text {
   -webkit-transform: skewX(12deg);
           transform: skewX(12deg);
+}
+
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 20%);
+          transform: translate(-50%, 20%);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.story:hover .story__caption {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.story:hover .story__image {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateX(-4rem) scale(1);
+          transform: translateX(-4rem) scale(1);
+  -webkit-filter: blur(3px) brightness(80%);
+          filter: blur(3px) brightness(80%);
 }
 
 .header {
