@@ -6,6 +6,8 @@
   }
 }
 
+//change background image
+
 @mixin my-background-image($imgpath, $color-light, $color-dark) {
   background: {
     image: linear-gradient(
@@ -19,8 +21,9 @@
   }
 }
 
+//text linear background styling
 
-@mixin linear-gradient-text-background($color-light, $color-dark){
+@mixin linear-gradient-text-background($color-light, $color-dark) {
   display: inline-block;
   background-image: linear-gradient(to right, $color-light, $color-dark);
   -webkit-background-clip: text;
@@ -28,8 +31,9 @@
   color: transparent;
 }
 
+//centering content
 
-@mixin absoluteCenter{
+@mixin absoluteCenter {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,3 +41,56 @@
 }
 
 //TODO: add absoluteCenter to other parts of code
+
+//media query manager
+/*
+
+
+0     -   600px:      Phone
+600   -   900px:      Tablet portrait
+900   -   1200px:     Tablet landscape
+1200  -   1800px:     Desktop (where our normal styles apply)
+1800  +         :     Big desktop
+
+$breakpoint argument choices:
+- phone
+- tablet-port
+- tablet-land
+- big-desk
+
+em and rem are not affected in the media queries!
+therefore when using them remember that 1em = 16px and 1rem = 16px
+em is more supported therefore use em
+
+ORDER to change: Base + typography -> general layout + grid -> page layout -> components
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media screen and (max-width: 37.5em) {
+      //600px /16
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-port {
+    @media screen and (max-width: 56.25em) {
+      //900px /16
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-land {
+    @media screen and (max-width: 75em) {
+      //1200px /16
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desk {
+    @media screen and (min-width: 112.5em) {
+      //1800px /16
+      @content;
+    }
+  }
+} ;

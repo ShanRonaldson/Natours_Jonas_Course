@@ -5,9 +5,17 @@
 
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+
+    @include respond(tablet-port){ //in tablets and smaller there is only one col
+      margin-bottom: $gutter-vertical-small !important;
+    }
+
   }
 
-  
+  @include respond(tablet-port){
+    max-width: 50rem;
+  }
 
   @include clearfix;
 
@@ -16,7 +24,20 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tablet-port){ //in tablets and smaller there is only one col
+        margin-right: 0 !important;
+        margin-bottom: $gutter-vertical-small;
+      }
     }
+
+    @include respond(tablet-port){ //in tablets and smaller there is only one col
+      width: 100% !important;
+    }
+
+
+
+
   }
 
   .col-1-of-2 {

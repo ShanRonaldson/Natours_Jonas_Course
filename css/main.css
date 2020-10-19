@@ -1,3 +1,24 @@
+/*
+
+
+0     -   600px:      Phone
+600   -   900px:      Tablet portrait
+900   -   1200px:     Tablet landscape
+1200  -   1800px:     Desktop (where our normal styles apply)
+1800  +         :     Big desktop
+
+$breakpoint argument choices:
+- phone
+- tablet-port
+- tablet-land
+- big-desk
+
+em and rem are not affected in the media queries!
+therefore when using them remember that 1em = 16px and 1rem = 16px
+em is more supported therefore use em
+
+ORDER to change: Base + typography -> general layout + grid -> page layout -> components
+*/
 *,
 *::after,
 *::before {
@@ -9,6 +30,36 @@
 
 html {
   font-size: 62.5%;
+}
+
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  padding: 3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 75em) {
+  body {
+    padding: 0;
+  }
 }
 
 @-webkit-keyframes moveInLeft {
@@ -110,9 +161,6 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 .heading-primary {
@@ -136,6 +184,14 @@ body {
           animation-timing-function: ease-out;
 }
 
+@media screen and (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 1rem;
+    font-size: 5rem;
+    font-weight: 300;
+  }
+}
+
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
@@ -147,6 +203,13 @@ body {
           animation-duration: 2s;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+}
+
+@media screen and (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: 0.5rem;
+    font-weight: 300;
+  }
 }
 
 .heading-secondary {
@@ -162,6 +225,20 @@ body {
   letter-spacing: 2px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+@media screen and (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+  }
 }
 
 .heading-secondary:hover {
@@ -377,8 +454,6 @@ body {
 }
 
 .feature-box {
-  min-width: 25rem;
-  min-height: 35rem;
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
   padding: 2.5rem;
@@ -386,10 +461,10 @@ body {
   border-radius: 3px;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .feature-box__icon {
@@ -822,8 +897,8 @@ body {
   opacity: 0;
   -webkit-transform: translate(50%, 50%) scale(0.25);
           transform: translate(50%, 50%) scale(0.25);
-  -webkit-transition: all .4s .2s;
-  transition: all .4s .2s;
+  -webkit-transition: all 0.4s 0.2s;
+  transition: all 0.4s 0.2s;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -878,8 +953,15 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+@media screen and (max-width: 37.5em) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
 }
 
 .header__logo-box {
@@ -910,6 +992,18 @@ body {
   margin-bottom: 8rem;
 }
 
+@media screen and (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem !important;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+  }
+}
+
 .row::after {
   content: "";
   display: table;
@@ -922,6 +1016,19 @@ body {
 
 .row [class^="col-"]:not(:last-child) {
   margin-right: 6rem;
+}
+
+@media screen and (max-width: 56.25em) {
+  .row [class^="col-"]:not(:last-child) {
+    margin-right: 0 !important;
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  .row [class^="col-"] {
+    width: 100% !important;
+  }
 }
 
 .row .col-1-of-2 {
