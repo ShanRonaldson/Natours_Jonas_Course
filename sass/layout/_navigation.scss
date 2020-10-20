@@ -16,6 +16,18 @@
     text-align: center;
     cursor: pointer;
     backface-visibility: hidden;
+
+    @include respond(tablet-port) {
+      top: 3rem;
+      right: 3rem;
+    }
+
+    @include respond(phone) {
+      height: 5rem;
+      width: 5rem;
+      top: 1rem;
+      right: 1rem;
+    }
   }
 
   &__background {
@@ -32,7 +44,17 @@
     z-index: 1000;
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 
-    // transform: scale(100);
+    @include respond(tablet-port) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+
+    @include respond(phone) {
+      height: 4rem;
+      width: 4rem;
+      top: 1.5rem;
+      right: 1.5rem;
+    }
   }
 
   &__nav {
@@ -110,7 +132,10 @@
   &__icon {
     position: relative;
     margin-top: 3.25rem;
-    
+
+    @include respond(phone) {
+      margin-top: 2.5rem;
+    }
 
     &,
     &::before,
@@ -119,7 +144,11 @@
       height: 2px;
       background-color: $color-grey-dark-3;
       display: inline-block;
-      transition: all .2s;
+      transition: all 0.2s;
+
+      @include respond(phone) {
+        width: 2.5rem;
+      }
     }
 
     &::before,
@@ -136,28 +165,25 @@
     }
   }
 
-  &__btn:hover &__icon::before{
+  &__btn:hover &__icon::before {
     top: -1rem;
   }
 
-  &__btn:hover &__icon::after{
+  &__btn:hover &__icon::after {
     top: 1rem;
   }
 
-  &__checkbox:checked + &__btn &__icon{
+  &__checkbox:checked + &__btn &__icon {
     background-color: transparent;
-
   }
 
-  &__checkbox:checked + &__btn &__icon::after{
+  &__checkbox:checked + &__btn &__icon::after {
     top: 0;
     transform: rotate(135deg);
-    
   }
 
-  &__checkbox:checked + &__btn &__icon::before{
+  &__checkbox:checked + &__btn &__icon::before {
     top: 0;
     transform: rotate(-135deg);
-    
   }
 }
