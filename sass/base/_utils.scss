@@ -33,6 +33,10 @@
 
 .u-margin-top-huge{
     margin-top: 10rem !important;
+
+    @include respond(tablet-port){
+        margin-top: 5rem !important;
+    }
 }
 
 .u-margin-top-big{
