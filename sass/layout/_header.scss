@@ -1,13 +1,26 @@
 .header {
-  height: 80vh;
+  height: 85vh;
   @include my-background-image(
-    "../img/hero.jpg",
+    "../img/hero-small.jpg",
     $color-primary-light,
     $color-primary-dark
   );
   position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    height: 95vh;
+  }
+
+  @media screen and (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    @include my-background-image(
+      "../img/hero.jpg",
+      $color-primary-light,
+      $color-primary-dark
+    );
+  }
 
   @include respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
