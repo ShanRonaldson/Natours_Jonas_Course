@@ -7,7 +7,7 @@
   box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: 0.15);
   transition: transform 0.3s;
 
-  @include respond(tablet-port){
+  @include respond(tablet-port) {
     padding: 2rem;
   }
 
@@ -18,7 +18,7 @@
       $color-primary-light,
       $color-primary-dark
     );
-    @include respond(tablet-port){
+    @include respond(tablet-port) {
       margin-bottom: 0;
     }
   }

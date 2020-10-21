@@ -1,49 +1,48 @@
-.u-center-text{
-    text-align: center !important;
+.u-center-text {
+  text-align: center !important;
 }
 
-.u-left-justify-text{
-    text-align: justify !important;
-    text-justify: left !important;
+.u-left-justify-text {
+  text-align: justify !important;
+  text-justify: left !important;
 }
 
-.u-margin-bottom-big{
-    margin-bottom: 8rem !important;
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important;
 
-    @include respond(tablet-port){
-        margin-bottom: 5rem !important;
-    }
+  @include respond(tablet-port) {
+    margin-bottom: 5rem !important;
+  }
 }
 
-.u-margin-bottom-medium{
-    margin-bottom: 4rem !important;
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
 
-    @include respond(tablet-port){
-        margin-bottom: 3rem !important;
-    }
+  @include respond(tablet-port) {
+    margin-bottom: 3rem !important;
+  }
 }
 
-.u-margin-bottom-small{
-    margin-bottom: 2rem !important;
+.u-margin-bottom-small {
+  margin-bottom: 2rem !important;
 
-    @include respond(tablet-port){
-        margin-bottom: 1rem !important;
-    }
+  @include respond(tablet-port) {
+    margin-bottom: 1rem !important;
+  }
 }
 
-.u-margin-top-huge{
-    margin-top: 10rem !important;
+.u-margin-top-huge {
+  margin-top: 10rem !important;
 
-    @include respond(tablet-port){
-        margin-top: 5rem !important;
-    }
+  @include respond(tablet-port) {
+    margin-top: 5rem !important;
+  }
 }
 
-.u-margin-top-big{
-    margin-top: 8rem !important;
+.u-margin-top-big {
+  margin-top: 8rem !important;
 }
 
-
-.u-no-margin-left{
-    margin-left:0 !important; 
+.u-no-margin-left {
+  margin-left: 0 !important;
 }

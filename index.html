@@ -73,7 +73,9 @@
           <span class="heading-primary--sub"> is where life happens </span>
         </h1>
 
-        <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
+        <a href="#section-tours" class="btn btn--white btn--animated"
+          >Discover our tours</a
+        >
       </div>
     </header>
 
@@ -107,19 +109,25 @@
           <div class="col-1-of-2">
             <div class="composition">
               <img
-                src="img/nat-1-large.jpg"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width: 600px) 30vw, 300px"
                 alt="Photo 1"
                 class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
               />
               <img
-                src="img/nat-2-large.jpg"
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width: 600px) 30vw, 300px"
                 alt="Photo 2"
                 class="composition__photo composition__photo--p2"
+                src="img/nat-2-large.jpg"
               />
               <img
-                src="img/nat-3-large.jpg"
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width: 600px) 30vw, 300px"
                 alt="Photo 3"
                 class="composition__photo composition__photo--p3"
+                src="img/nat-3-large.jpg"
               />
             </div>
           </div>
@@ -445,7 +453,12 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo" />
+        <img
+          src="img/logo-green-2x.png"
+          srcset="img/logo-green-1x.png 1000w, img/logo-green-2x.png 2000w"
+          alt="Full logo"
+          class="footer__logo"
+        />
       </div>
 
       <div class="row">
@@ -497,13 +510,11 @@
     <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
-          <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img" />
-          <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img" />
+          <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img--1" />
+          <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img--2" />
         </div>
         <div class="popup__right">
-          <a href="#section-tours" class="popup__close">
-            &times;
-          </a>
+          <a href="#section-tours" class="popup__close"> &times; </a>
           <h2 class="heading-secondary u-margin-bottom-small">
             Start booking now
           </h2>
@@ -531,7 +542,7 @@
             sagittis orci a scelerisque. Pharetra pharetra massa massa ultricies
             mi quis.
           </p>
-          <a href="#" class="btn btn--green">Book now </a>
+          <a href="#" class="btn btn--green popup__btn">Book now </a>
         </div>
       </div>
     </div>
