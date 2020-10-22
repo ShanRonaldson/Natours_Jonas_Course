@@ -4,15 +4,23 @@
   "description": "advanced css",
   "main": "index.html",
   "scripts": {
-    "compile:scss": "node-sass ./sass/main.scss ./css/style.css -w",
-    "start": "node-sass ./sass/main.scss ./css/style.css -w"
+    "watch:scss": "node-sass sass/main.scss css/style.css -w",
+    "compile:scss": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last versions' css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.min.css --output-style compressed"
   },
   "author": "Shannon",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "4.14.1"
+    "concat": "1.0.3",
+    "node-sass": "4.14.1",
+    "autoprefixer": "10.0.1",
+    "postcss-cli": "8.0.0"
   },
   "dependencies": {
+    "postcss-cli": "^8.1.0",
+    "postcss-scss": "^3.0.2",
     "sass": "^1.27.0"
   }
 }
