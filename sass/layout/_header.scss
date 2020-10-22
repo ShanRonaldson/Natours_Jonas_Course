@@ -1,22 +1,23 @@
 .header {
   height: 85vh;
   @include my-background-image(
-    "../img/hero-small.jpg",
+    "../../img/hero-small.jpg",
     $color-primary-light,
     $color-primary-dark
   );
   position: relative;
 
-
-  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     height: 95vh;
   }
 
-  @media screen and (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  @media screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
     @include my-background-image(
-      "../img/hero.jpg",
+      "../../img/hero.jpg",
       $color-primary-light,
       $color-primary-dark
     );

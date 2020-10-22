@@ -76,7 +76,7 @@
 
     &--1 {
       @include my-background-image(
-        "../img/nat-5.jpg",
+        "../../img/nat-5.jpg",
         $color-primary-light,
         $color-primary-dark
       );
@@ -84,7 +84,7 @@
 
     &--2 {
       @include my-background-image(
-        "../img/nat-6.jpg",
+        "../../img/nat-6.jpg",
         $color-secondary-light,
         $color-secondary-dark
       );
@@ -92,7 +92,7 @@
 
     &--3 {
       @include my-background-image(
-        "../img/nat-7.jpg",
+        "../../img/nat-7.jpg",
         $color-tertiary-light,
         $color-tertiary-dark
       );
@@ -186,7 +186,8 @@
     font-weight: 100;
   }
 
-  @include respond(tablet-port) {
+  //cant use include respond as want two media queries
+  @media only screen and (max-width: 56.25em), screen and (hover: none) {
     height: auto;
     border-radius: $border-radius;
     background-color: $color-white;
